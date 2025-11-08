@@ -1,0 +1,11 @@
+torch>=2.0
+torchvision
+Pillow
+numpy
+pandas
+matplotlib
+streamlit
+pyttsx3
+pytest
+playwright
+scikit-learn
