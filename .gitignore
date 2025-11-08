@@ -24,3 +24,10 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+**/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Temporary / scratch files
+*.tmp
+*.log
+*.out
