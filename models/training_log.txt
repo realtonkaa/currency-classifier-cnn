@@ -1,0 +1,5 @@
+Training run - Feb 8, 2026
+Dataset: 6 sample images (2 classes)
+Epochs: 5
+Best val accuracy: 67%
+Note: need more data and better augmentation
