@@ -1,0 +1,10 @@
+# Development dependencies — not needed for running the app
+# Install with: pip install -r requirements-dev.txt
+
+pytest>=7.0
+pytest-cov
+playwright
+flake8
+black
+isort
+mypy
