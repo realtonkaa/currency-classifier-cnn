@@ -1,0 +1,39 @@
+/* Accessible high-contrast styles for the currency classifier app */
+
+:root {
+    --bg-primary: #0a0a1a;
+    --bg-secondary: #1a1a2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-green: #00ff88;
+    --accent-yellow: #ffcc00;
+    --accent-red: #ff6b6b;
+    --accent-blue: #4444aa;
+}
+
+/* Ensure minimum contrast ratio of 4.5:1 for WCAG AA compliance */
+body {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Focus indicators for keyboard navigation */
+*:focus {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link (screen reader accessible) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-blue);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
