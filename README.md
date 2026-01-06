@@ -39,6 +39,42 @@ playwright install chromium
 
 ---
 
+## Troubleshooting
+
+**`pyttsx3` not speaking on Linux**
+
+Some Linux distros don't ship with a speech synthesiser by default. Install `espeak`:
+
+```bash
+sudo apt-get install espeak
+```
+
+**Playwright install fails**
+
+Make sure you've installed the browser binaries after `pip install playwright`:
+
+```bash
+playwright install chromium
+```
+
+If you're behind a corporate proxy, set `PLAYWRIGHT_DOWNLOAD_HOST` to a mirror or download the binaries manually.
+
+**`torch` install is very slow or fails on Windows**
+
+Install PyTorch separately using the wheel from the official site:
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+```
+
+Then install the rest of the requirements normally.
+
+**Model file not found**
+
+The trained model checkpoint is not included in the repo (too large for git). Either run `python run_training.py` to train your own, or download the pretrained checkpoint from the releases page and place it at `models/best_model.pth`.
+
+---
+
 ## Usage
 
 ### Command-line prediction
