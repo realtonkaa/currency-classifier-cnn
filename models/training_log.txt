@@ -1,5 +1,23 @@
-Training run - Feb 8, 2026
+Training Log
+
+Run 1 - Nov 2025
 Dataset: 6 sample images (2 classes)
 Epochs: 5
 Best val accuracy: 67%
 Note: need more data and better augmentation
+
+Run 2 - Dec 2025
+Dataset: 899 images, Turkish Banknote Dataset (6 denominations)
+Model: MobileNetV2 (frozen backbone)
+Epochs: 10
+Best val accuracy: 89%
+Note: transfer learning made a huge difference
+
+Run 3 - Jan 2026
+Dataset: 899 images, Turkish Banknote Dataset (6 denominations)
+Model: MobileNetV2 (full fine-tuning)
+Epochs: 10, batch size 16
+Best val accuracy: 98.9%
+Test set: 29/30 correct (96.7%)
+Note: full fine-tuning pushed accuracy much higher
+Model saved to best_model.pth
