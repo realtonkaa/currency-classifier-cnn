@@ -1,8 +1,9 @@
 """Prediction module for currency classification."""
 
-import torch
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Union
+
+import torch
 
 from src.model import CurrencyClassifier
 from src.utils import load_and_preprocess
@@ -30,8 +31,13 @@ CURRENCY_NAMES = {
 }
 
 
-def load_model(model_path: str, num_classes: int, device: str = "cpu") -> CurrencyClassifier:
+def load_model(
+    model_path: Union[str, Path],
+    num_classes: int,
+    device: str = "cpu",
+) -> CurrencyClassifier:
     """Load a trained model from checkpoint."""
+    model_path = Path(model_path)
     model = CurrencyClassifier(num_classes=num_classes)
     checkpoint = torch.load(model_path, map_location=device, weights_only=True)
 
@@ -62,9 +68,13 @@ def get_top_k(probabilities: torch.Tensor, class_names: List[str], k: int = 3) -
     return results
 
 
-def predict_currency(image_path: str, model_path: str = "models/best_model.pth",
-                     class_names: Optional[List[str]] = None,
-                     num_classes: int = 112, device: str = "cpu") -> Dict:
+def predict_currency(
+    image_path: Union[str, Path],
+    model_path: Union[str, Path] = "models/best_model.pth",
+    class_names: Optional[List[str]] = None,
+    num_classes: int = 112,
+    device: str = "cpu",
+) -> Dict:
     """Predict currency and denomination from a banknote image.
 
     Args:
@@ -77,6 +87,10 @@ def predict_currency(image_path: str, model_path: str = "models/best_model.pth",
     Returns:
         dict with currency, denomination, confidence, and top-3 predictions
     """
+    # Normalise paths
+    image_path = Path(image_path)
+    model_path = Path(model_path)
+
     # Load model
     model = load_model(model_path, num_classes, device)
 
