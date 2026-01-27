@@ -187,6 +187,19 @@ A few things that surprised me or that I'd tell myself at the start:
 
 ---
 
+## Built With Claude
+
+I used [Claude](https://claude.ai) (Anthropic's AI assistant) as a development partner throughout this project. Claude helped me with:
+
+- Debugging tricky PyTorch data loading issues
+- Explaining transfer learning concepts and helping me choose MobileNetV2 over ResNet (smaller model = runs on cheap phones, which matters for accessibility)
+- Writing boilerplate code like argument parsers and test fixtures so I could focus on the ML logic
+- Reviewing my training pipeline and suggesting improvements like learning rate scheduling
+
+To be clear: I designed the project, chose the accessibility angle, picked the architecture, and made all the key decisions. Claude was a tool I used to move faster and learn deeper -- the same way a developer uses Stack Overflow or documentation, just more interactive. I believe being transparent about AI assistance is important, especially for a project about AI.
+
+---
+
 ## License
 
 MIT
